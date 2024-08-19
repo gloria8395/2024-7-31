@@ -17,7 +17,6 @@ while True:
         else:
             grade="重度肥胖"
         print(f"{name}的bmi為{bmi},為{grade}")
-            
     except ValueError:
         print("格式錯誤")
         continue
