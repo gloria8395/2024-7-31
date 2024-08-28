@@ -1,12 +1,13 @@
 class BMI():
     def __init__(self,name:str,height:float,weight:float):
-        self.name=name
+        self.__name=name
         self.height=height
         self.weight=weight
-
-    def getName(self)->str:
-        return self.name
     
+    @property  ##只能讀出，不能寫入
+    def name(self)->str:
+        return self.__name
+
     def getBMI(self)->float:
         return round(self.weight/((self.height*0.01)**2),ndigits=2);
 
@@ -34,8 +35,8 @@ while True:
 
         #建立一個BMI的實體
         myBMI=BMI(name=name,height=height,weight=weight)
-        myBMI.name='xxxx'
-        print(f"{myBMI.getName()} 的 BMI 為 {myBMI.getBMI()},為{myBMI.get_status_message()}")
+        #myBMI.name='xxxx'
+        print(f"{myBMI.name} 的 BMI 為 {myBMI.getBMI()},為{myBMI.get_status_message()}")
     except ValueError:
         print("格式錯誤")
         continue
