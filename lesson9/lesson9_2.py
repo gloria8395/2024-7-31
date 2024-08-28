@@ -34,8 +34,8 @@ while True:
 
         #建立一個BMI的實體
         myBMI=BMI(name=name,height=height,weight=weight)
-
-        print(f'{myBMI.getName()} 的 BMI 為 {myBMI.getBMI()},為{myBMI.get_status_message()}')
+        myBMI.name='xxxx'
+        print(f"{myBMI.getName()} 的 BMI 為 {myBMI.getBMI()},為{myBMI.get_status_message()}")
     except ValueError:
         print("格式錯誤")
         continue
